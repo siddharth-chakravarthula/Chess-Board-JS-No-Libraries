@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Board</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="board">
+        <!-- 8th Rank -->
+        <div class="rank">
+            <div class="white-square"><div class="piece"><img alt = "black" src="black-rook.png"></div></div>
+            <div class="black-square"><div class="piece"><img alt = "black" src="black-knight.png"></div></div>
+            <div class="white-square"><div class="piece"><img alt = "black" src="black-bishop.png"></div></div>
+            <div class="black-square"><div class="piece"><img alt = "black" src="black-queen.png"></div></div>
+            <div class="white-square"><div class="piece"><img alt = "black" src="black-king.png"></div></div>
+            <div class="black-square"><div class="piece"><img alt = "black" src="black-bishop.png"></div></div>
+            <div class="white-square"><div class="piece"><img alt = "black" src="black-knight.png"></div></div>
+            <div class="black-square"><div class="piece"><img alt = "black" src="black-rook.png"></div></div>
+        </div>
+        <!-- 7th Rank -->
+        <div class="rank">
+            <div class="black-square"><div class="piece"><img alt = "black" src="black-pawn.png"></div></div>
+            <div class="white-square"><div class="piece"><img alt = "black" src="black-pawn.png"></div></div>
+            <div class="black-square"><div class="piece"><img alt = "black" src="black-pawn.png"></div></div>
+            <div class="white-square"><div class="piece"><img alt = "black" src="black-pawn.png"></div></div>
+            <div class="black-square"><div class="piece"><img alt = "black" src="black-pawn.png"></div></div>
+            <div class="white-square"><div class="piece"><img alt = "black" src="black-pawn.png"></div></div>
+            <div class="black-square"><div class="piece"><img alt = "black" src="black-pawn.png"></div></div>
+            <div class="white-square"><div class="piece"><img alt = "black" src="black-pawn.png"></div></div>
+        </div>
+        <!-- 6th Rank -->
+        <div class="rank">
+            <div class="white-square"></div>
+            <div class="black-square"></div>
+            <div class="white-square"></div>
+            <div class="black-square"></div>
+            <div class="white-square"></div>
+            <div class="black-square"></div>
+            <div class="white-square"></div>
+            <div class="black-square"></div>
+        </div>
+        <!-- 5th Rank -->
+        <div class="rank">
+            <div class="black-square"></div>
+            <div class="white-square"></div>
+            <div class="black-square"></div>
+            <div class="white-square"></div>
+            <div class="black-square"></div>
+            <div class="white-square"></div>
+            <div class="black-square"></div>
+            <div class="white-square"></div>
+        </div>
+        <!-- 4th Rank -->
+        <div class="rank">
+            <div class="white-square"></div>
+            <div class="black-square"></div>
+            <div class="white-square"></div>
+            <div class="black-square"></div>
+            <div class="white-square"></div>
+            <div class="black-square"></div>
+            <div class="white-square"></div>
+            <div class="black-square"></div>
+        </div>
+        <!-- 3rd Rank -->
+        <div class="rank">
+            <div class="black-square"></div>
+            <div class="white-square"></div>
+            <div class="black-square"></div>
+            <div class="white-square"></div>
+            <div class="black-square"></div>
+            <div class="white-square"></div>
+            <div class="black-square"></div>
+            <div class="white-square"></div>
+        </div>
+        <!-- 2nd Rank -->
+        <div class="rank">
+            <div class="white-square"><div class="piece"><img alt = "white" src="white-pawn.png"></div></div>
+            <div class="black-square"><div class="piece"><img alt = "white" src="white-pawn.png"></div></div>
+            <div class="white-square"><div class="piece"><img alt = "white" src="white-pawn.png"></div></div>
+            <div class="black-square"><div class="piece"><img alt = "white" src="white-pawn.png"></div></div>
+            <div class="white-square"><div class="piece"><img alt = "white" src="white-pawn.png"></div></div>
+            <div class="black-square"><div class="piece"><img alt = "white" src="white-pawn.png"></div></div>
+            <div class="white-square"><div class="piece"><img alt = "white" src="white-pawn.png"></div></div>
+            <div class="black-square"><div class="piece"><img alt = "white" src="white-pawn.png"></div></div>
+        </div>
+        <!-- 1st Rank -->
+        <div class="rank">
+            <div class="black-square"></div>
+            <div class="white-square"><div class="piece"><img alt = "white" src="white-knight.png"></div></div>
+            <div class="black-square"><div class="piece"><img alt = "white" src="white-bishop.png"></div></div>
+            <div class="white-square"><div class="piece"><img alt = "white" src="white-queen.png"></div></div>
+            <div class="black-square"><div class="piece"><img alt = "white" src="white-king.png"></div></div>
+            <div class="white-square"><div class="piece"><img alt = "white" src="white-bishop.png"></div></div>
+            <div class="black-square"><div class="piece"><img alt = "white" src="white-knight.png"></div></div>
+            <div class="white-square"><div class="piece"><img alt = "white" src="white-rook.png"></div></div>
+        </div>
+    </div>
+<script>
+const allRanks = document.querySelectorAll('.rank');
+let counter = 8;
+
+for (const rank of allRanks) {
+    const firstSquare = rank.firstElementChild;
+    firstSquare.innerHTML = `<div class="number">${counter}</div>`;
+    let evenodd = counter % 2 === 1 ? 'odd' : 'even';
+    firstSquare.id = `${evenodd}`;
+    counter -= 1;
+}
+
+const firstRank = document.querySelectorAll('.rank')[7];
+const secondRank = document.querySelectorAll('.rank')[6];
+const seventhRank = document.querySelectorAll('.rank')[1];
+const eigthRank = document.querySelectorAll('.rank')[0];
+const letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+
+for (let i = 0; i < firstRank.children.length; i++) {
+    let evenodd2 = ['odd', 'even', 'odd', 'even', 'odd', 'even', 'odd', 'even'];
+    firstRank.children[i].innerHTML = `<div class="letter" id=${evenodd2[i]}>${letters[i]}</div>` + firstRank.children[i].innerHTML;
+}
+
+const a1Square = firstRank.children[0];
+a1Square.innerHTML = `<div class="letter">a</div><div class="number">1</div><div class="piece"><img src="white-rook.png"></div>`;
+const a2Square = secondRank.children[0];
+a2Square.innerHTML = `<div class="number">2</div><div class="piece"><img src="white-pawn.png"></div>`;
+const a7Square = seventhRank.children[0];
+a7Square.innerHTML = `<div class="number">7</div><div class="piece"><img src="black-pawn.png"></div>`;
+const a8Square = eigthRank.children[0];
+a8Square.innerHTML = `<div class="number">8</div><div class="piece"><img src="black-rook.png"></div>`;
+</script>
+<script src="script.js"></script>
+</body>
+</html>

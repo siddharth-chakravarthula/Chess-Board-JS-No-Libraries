@@ -1,0 +1,95 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  margin: 0;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid black;
+  background-color: #eee;
+}
+
+.rank {
+  display: flex;
+}
+
+.white-square,
+.black-square {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.white-square {
+  background-color: beige;
+}
+
+.black-square {
+  background-color: #b58863;
+}
+
+.number {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  font-size: 10px;
+}
+
+#even {
+  color: #b58863;
+}
+
+#odd {
+  color: beige;
+}
+
+.letter {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  font-size: 10px;
+}
+
+.piece {
+  size: 100%;
+  cursor: grab;
+}
+
+.piece:active {
+  cursor: grabbing;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #68ceaa;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.promotion-ui {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  flex-direction: column;
+  background-color: white;
+  border: 1px solid black;
+  z-index: 10;
+}
+
+.promotion-ui img {
+  width: 100%;
+  cursor: pointer;
+}
